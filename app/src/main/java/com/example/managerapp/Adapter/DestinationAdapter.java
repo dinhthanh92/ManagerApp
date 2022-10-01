@@ -378,7 +378,7 @@ public class DestinationAdapter extends RecyclerView.Adapter<DestinationAdapter.
             public void onPlaceSelected(@NonNull Place place) {
                 // TODO: Get info about the selected place.
                 LatLng latLng = new LatLng(place.getLatLng().latitude, place.getLatLng().longitude);
-ssss
+
                 valueLatitude = latLng.latitude;
                 valueLongitude = latLng.longitude;
                 valuePlace = place.getAddress();
