@@ -26,7 +26,7 @@ import retrofit2.http.Query;
 public interface ApiService {
 //        String BASE_URL = "http://192.168.100.6:8080/api/";
 
-    String BASE_URL = "http://172.16.1.37:8080/api/";
+    String BASE_URL = "http://172.16.1.123:8080/api/";
 
     Gson gson = new GsonBuilder()
             .setDateFormat("yyyy-MM-dd'T'HH:mm:ssZ")
@@ -88,6 +88,9 @@ public interface ApiService {
 
     @POST("user/create")
     Call<ApiResponseResult<Object>> CreateUser(@Body ListUserModel listUserModel );
+
+    @DELETE("user/delete/{id}")
+    Call<ApiResponseResult<Object>> DeleteUser(@Path("id") String userId );
 
     @POST("user/reset-password")
     Call<ApiResponseResult<Object>> ResetPassword();

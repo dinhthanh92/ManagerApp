@@ -6,6 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".MapViewActivity">
 
+
+
     <fragment
         android:id="@+id/google_map_view"
         android:name="com.google.android.gms.maps.SupportMapFragment"
@@ -13,5 +15,18 @@
         android:layout_height="match_parent"
         tools:context=".MapsActivity"
         tools:layout_editor_absoluteX="175dp" />
+
+    <Button
+        android:id="@+id/back_screen_view_map"
+        android:layout_width="0dp"
+        android:theme="@style/Theme.Material3.DayNight"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        android:drawableLeft="@drawable/ic_baseline_arrow_back_24"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_margin="16dp"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

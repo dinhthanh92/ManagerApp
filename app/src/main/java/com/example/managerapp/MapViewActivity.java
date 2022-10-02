@@ -3,8 +3,11 @@ package com.example.managerapp;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 
 import com.example.managerapp.ApiService.ApiService;
 import com.example.managerapp.Model.ApiResponseResult;
@@ -28,6 +31,18 @@ public class MapViewActivity extends SetMenuOption implements OnMapReadyCallback
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map_view);
+
+        Button btnBack = findViewById(R.id.back_screen_view_map);
+
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final Intent intents = new Intent(MapViewActivity.this,
+                        DestinationActivity.class);
+                intents.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intents);
+            }
+        });
 
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.google_map_view);

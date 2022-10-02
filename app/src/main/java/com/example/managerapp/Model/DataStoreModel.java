@@ -17,6 +17,7 @@ public class DataStoreModel {
         this.token = token;
         this.user = user;
     }
+
     public DataStoreModel() {}
 
     public String getToken() {

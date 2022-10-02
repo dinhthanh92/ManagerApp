@@ -6,7 +6,6 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.managerapp.Model.DataStoreModel;
@@ -31,6 +30,7 @@ public class SetMenuOption extends AppCompatActivity {
             MainActivity.SetStoreData(dataStoreModel);
             final Intent intents = new Intent(SetMenuOption.this, LoginActivity.class);
             intents.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+            SetMenuOption.this.finish();
             startActivity(intents);
         }
         if (item.getItemId() == R.id.user_manager) {
@@ -41,7 +41,6 @@ public class SetMenuOption extends AppCompatActivity {
         if (item.getItemId() == R.id.home_action) {
             final Intent intents = new Intent(SetMenuOption.this, TripActivity.class);
             intents.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
-
             startActivity(intents);
         }
 

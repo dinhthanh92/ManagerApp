@@ -6,9 +6,14 @@ import com.google.gson.annotations.SerializedName;
 import java.util.List;
 
 public class ListUserModel {
+    @SerializedName("_id")
+    @Expose
+    public String _id;
+
     @SerializedName("email")
     @Expose
     public String email;
+
     @SerializedName("username")
     @Expose
     public String username;
@@ -21,6 +26,13 @@ public class ListUserModel {
         this.email = email;
         this.username = username;
         this.status = status;
+    }
+
+    public ListUserModel(String email,String username, Boolean status, String _id){
+        this.email = email;
+        this.username = username;
+        this.status = status;
+        this._id = _id;
     }
 
     public String getEmail() {
@@ -45,5 +57,13 @@ public class ListUserModel {
 
     public void setStatus(Boolean status) {
         this.status = status;
+    }
+
+    public String get_id() {
+        return _id;
+    }
+
+    public void set_id(String _id) {
+        this._id = _id;
     }
 }

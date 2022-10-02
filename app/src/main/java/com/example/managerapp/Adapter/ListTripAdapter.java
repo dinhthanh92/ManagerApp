@@ -239,7 +239,6 @@ public class ListTripAdapter  extends RecyclerView.Adapter<ListTripAdapter.viewH
         holder.btnDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Dialog dialog = new Dialog(context);
                 AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context);
                 alertDialogBuilder.setTitle("Confirm delete trip");
                 alertDialogBuilder.setMessage("Are you sure delete !!!");
