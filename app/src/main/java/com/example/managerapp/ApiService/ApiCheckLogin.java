@@ -13,7 +13,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.http.GET;
 
 public interface ApiCheckLogin {
-    String BASE_URL = "http://172.16.1.37:8080/api/";
+    String BASE_URL = "http://192.168.1.17:8080/api/";
 
     Gson gson = new GsonBuilder()
             .setDateFormat("yyyy-MM-dd'T'HH:mm:ssZ")

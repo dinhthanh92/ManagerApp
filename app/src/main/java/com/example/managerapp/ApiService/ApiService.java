@@ -2,6 +2,7 @@ package com.example.managerapp.ApiService;
 
 import com.example.managerapp.Model.ApiResponseResult;
 import com.example.managerapp.Model.DestinationModel;
+import com.example.managerapp.Model.DestinationOptionMapModel;
 import com.example.managerapp.Model.LatLngModel;
 import com.example.managerapp.Model.ListUserModel;
 import com.example.managerapp.Model.TripModel;
@@ -26,7 +27,7 @@ import retrofit2.http.Query;
 public interface ApiService {
 //        String BASE_URL = "http://192.168.100.6:8080/api/";
 
-    String BASE_URL = "http://172.16.1.123:8080/api/";
+    String BASE_URL = "http://192.168.1.17:8080/api/";
 
     Gson gson = new GsonBuilder()
             .setDateFormat("yyyy-MM-dd'T'HH:mm:ssZ")
@@ -82,6 +83,9 @@ public interface ApiService {
 
     @GET("destination/get-lat-log/{destinationId}")
     Call<ApiResponseResult<List<LatLngModel>>> getLatLogByDestinationId(@Path("destinationId") String destinationId );
+
+    @GET("destination/dashboard-map")
+    Call<ApiResponseResult<List<DestinationOptionMapModel>>> DestinationOptionMapApi(@Query("tripId") String tripId);
 
     @GET("user/index")
     Call<ApiResponseResult<List<ListUserModel>>> IndexUser(@Query("searchText") String searchText );
